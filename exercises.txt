@@ -2,15 +2,19 @@
 mysql-ctl start
 mysql -usebastienvuong
 
+
 = EXERCISE 2
 CREATE DATABASE decodemtl_test;
 CREATE DATABASE decodemtl_addressbook;
 
+
 = EXERCISE 3
 DROP DATABASE decodemtl_test;
 
+
 = EXERCISE 4
 SHOW DATABASES;
+
 
 = EXERCISE 5
 USE decodemtl_addressbook;
@@ -18,11 +22,56 @@ CREATE TABLE Account (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255), pas
 CREATE TABLE AddressBook (id INT AUTO_INCREMENT PRIMARY KEY, accountId INT, name VARCHAR(255), createdOn DATETIME, ModifiedOn DATETIME);
 CREATE TABLE Entry (id INT AUTO_INCREMENT PRIMARY KEY);
 
+
 = EXERCISE 6
 DROP TABLE test;
+
 
 = EXERCISE 7
 SHOW TABLES;
 
+
 = EXERCISE 8
 ALTER TABLE Entry ADD COLUMN (addressBookId INT, firstName VARCHAR(255), lastName VARCHAR(255), birthday DATETIME, type ENUM('home','work','other'), subtype ENUM('phone','address','email'), contentLineOne VARCHAR(255), contentLineTwo VARCHAR(255), contentLineThree VARCHAR(255), contentLineFour VARCHAR(255), contentLineFive VARCHAR(255));
+
+
+= EXERCISE 9
+CREATE DATABASE Barn_ey_the_Dinosaur;
+USE Barn_ey_the_Dinosaur;
+CREATE TABLE Chickens (id INT AUTO_INCREMENT PRIMARY KEY, nameLol VARCHAR(255), type ENUM('rooster','hen','chick'), birthDate DATETIME, deathOrSaleDate DATETIME);
+
+INSERT INTO Chickens
+VALUES
+(1, 'Bobbers',  'rooster', '2008-08-08', '2010-08-08'),
+(2, 'Bobbia', 'hen', '2009-09-09', '2011-09-09'),
+(3, 'Boben', 'chick', '2010-10-10', '2012-10-10');
+
+SELECT COUNT(*) FROM Chickens 
+WHERE type = ['rooster','hen','chick']
+AND birthDate < [SPECIFIC DATE]
+AND deathOrSaleDate > [SPECIFIC DATE];
+
+(Example)
+SELECT COUNT(*) FROM Chickens 
+WHERE type = 'rooster'
+AND birthDate <= '2009-09-18'
+AND deathOrSaleDate > '2009-09-18';
+
+SELECT COUNT(*) FROM Chickens
+WHERE type = ['rooster','hen','chick']
+AND birthDate = [SPECIFIC DATE - AGE DESIRED]
+AND deathOrSaleDate > [SPECIFIC DATE];
+
+(Example)
+SELECT COUNT(*) FROM Chickens
+WHERE type = 'chick'
+AND birthDate = "2010-10-10"
+AND deathOrSaleDate > "2011-10-10";
+
+
+= EXERCISE 10
+Hotel > Floors, Rooms, Reservations
+    Floors > Number of windows, Room numbers
+    Rooms > Function ('rent','janitor closet','laundry room','gym'), kitchen ('yes','no'), max occupancy, carpets ('yes','no')
+    Reservations > Room, first name, last name, check-in date, check-out date, credit card number
+    
