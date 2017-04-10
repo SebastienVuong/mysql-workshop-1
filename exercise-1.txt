@@ -1,2 +1,0 @@
-mysql-ctl start
-mysql -usebastienvuong

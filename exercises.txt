@@ -1,0 +1,9 @@
+= EXERCISE 1
+mysql-ctl start
+mysql -usebastienvuong
+
+= EXERCISE 2
+CREATE DATABASE decodemtl_test;
+CREATE DATABASE decodemtl_addressbook;
+
+= EXERCISE 3
