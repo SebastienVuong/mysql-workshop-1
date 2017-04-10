@@ -7,3 +7,9 @@ CREATE DATABASE decodemtl_test;
 CREATE DATABASE decodemtl_addressbook;
 
 = EXERCISE 3
+DROP DATABASE decodemtl_test;
+
+= EXERCISE 4
+SHOW DATABASES;
+
+= EXERCISE 5
